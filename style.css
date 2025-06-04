@@ -1,0 +1,200 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: pink;
+}
+
+.contenedor{
+    position: relative;
+    top: 0px;
+}
+
+.superior{
+    position: absolute;
+    border-left: 180px solid transparent;
+    border-right: 180px solid transparent;
+    border-top: 120px solid #f08080;
+    border-bottom: 120px solid transparent;
+
+    transition: transform 0.75s;
+    transform-origin: top;
+}
+
+.mensaje{
+    position: absolute;
+    padding: 1.5rem;
+    line-height: 1.5;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-optical-sizing: auto;
+    background-color: #e9e3c4;
+    width: 312px;
+    height: 192px;
+    z-index: -1;
+    transition: transform 0.75s ease-in-out;
+    color: rgba(0, 0, 0, 0);
+    
+}
+
+.mensaje::before{
+    content: "";
+    border-style: double;
+    border-color: #73463C;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 50px;
+}
+
+
+.mensaje p a{
+    position: relative;
+    font-size: 0.7rem;
+    top: -7px;
+    z-index: -3;
+}
+
+.mensaje h5{
+    position: relative;
+    top: 30;;
+    font-size: 1rem;
+}
+
+.mensaje h1{
+    font-size: 25px;
+}
+
+.mensaje h4{
+    font-size: 20px;
+    text-align: right;
+}
+
+
+
+.carta{
+    border-left: 180px solid #f8ad9d;
+    border-right: 180px solid #f4978e;
+    border-top: 120px solid transparent;
+    border-bottom: 120px solid #f8ad9d;
+}
+
+.bx{
+    position: absolute;
+    color: red;
+    top: 110px;
+    right: 155px;
+    font-size: 50px;
+    animation: palpitar 0.6s linear infinite;
+}
+
+.pSorpresa{
+    margin-top: -10px;
+}
+
+.botones{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.boton{
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #FA91EB, #6F91EB);
+    background-size: 200% 200%;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.boton:hover{
+    background-position: 100%, 100%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cartaCompleta{
+    /* background-color: #6F91EB; */
+    margin: 20px;
+}
+
+.cartaCompleta a{
+    /* background-color: #6F91EB; */
+    margin: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+/* Codigo Java Script*/
+.abrir-superior{
+    transform: rotateX(180deg);
+}
+
+.abrir-mensaje{
+    transform:  translateY(-490px);
+    height: 650px;
+}
+
+.mostrar-texto{
+    color: rgb(0, 0, 0);
+}
+
+.abrir-contenedor{
+    position: relative;
+    top: 480px;
+}
+
+.abrir-botones{
+    margin-top: 500px;
+}
+
+
+.bx-rotada{
+    color: red;
+    animation: none;
+}
+
+
+/* ANIMACIONES */
+@keyframes palpitar{
+    0%{
+        transform: scale(1.07);
+    }
+
+    80%{
+        transform: scale(1.0);
+    }
+
+    100%{
+        transform: scale(1.08);
+    }
+}
+
+
+/* RECURCIVIDAD PARA CELULAR */
+
+@media (max-width: 30px){
+    .mensaje::before{
+        content: "";
+        border-style: dotted;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 45px;
+    }
+
+    .mensaje p{
+        position: relative;
+        top: -15px;
+        font-size: 1rem;
+    }
+}
